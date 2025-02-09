@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Emblema+One&family=Lora:ital,wght@0,400..700;1,400..700&family=Paytone+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Pollo</title>
+</head>
+<body>
+
+
+
+    <!--=============== HEADER ===============-->
+    <header class="header">
+        <nav class="nav container">
+           <div class="nav__data">
+              <a href="#" class="nav__logo">
+                 <i class="ri-planet-line"></i> Company
+              </a>
+              
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line nav__burger"></i>
+                 <i class="ri-close-line nav__close"></i>
+              </div>
+           </div>
+
+           <!--=============== NAV MENU ===============-->
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li><a href="#" class="nav__link">Home</a></li>
+
+                 <li><a href="#" class="nav__link">Company</a></li>
+
+                 <!--=============== DROPDOWN 1 ===============-->
+                 <li class="dropdown__item">
+                    <div class="nav__link">
+                       Analytics <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-pie-chart-line"></i> Overview
+                          </a>                          
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-arrow-up-down-line"></i> Transactions
+                          </a>
+                       </li>
+
+                       <!--=============== DROPDOWN SUBMENU ===============-->
+                       <li class="dropdown__subitem">
+                          <div class="dropdown__link">
+                             <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                          </div>
+
+                          <ul class="dropdown__submenu">
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-file-list-line"></i> Documents
+                                </a>
+                             </li>
+     
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-cash-line"></i> Payments
+                                </a>
+                             </li>
+     
+                             <li>
+                                <a href="#" class="dropdown__sublink">
+                                   <i class="ri-refund-2-line"></i> Refunds
+                                </a>
+                             </li>
+                          </ul>
+                       </li>
+                    </ul>
+                 </li>
+                 
+                 <li><a href="#" class="nav__link">Products</a></li>
+
+                 <!--=============== DROPDOWN 2 ===============-->
+                 <li class="dropdown__item">
+                    <div class="nav__link">
+                       Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-user-line"></i> Profiles
+                          </a>                          
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-lock-line"></i> Accounts
+                          </a>
+                       </li>
+
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-message-3-line"></i> Messages
+                          </a>
+                       </li>
+                    </ul>
+                 </li>
+
+                 <li><a href="#" class="nav__link">Contact</a></li>
+              </ul>
+           </div>
+        </nav>
+     </header>
+
+
+
+     <section id="landing">
+        <div class="landing-intro">
+            <h2>Where Every Meal Feels Like Home.</h2>
+            <p>
+                Welcome to Pollo Locuas, a 
+                family-owned Mexican restaurant where every 
+                dish tells a story. We bring the warmth of a home-cooked meal to your table.
+            </p>
+            <button class="landing-button">Contact Us</button>
+        </div>
+        <div class="landing-image">
+            <img src="images/Remove background project (10).png" alt="">
+        </div>
+     </section>
+
+
+     <!--=============== FOOD MENU ===============-->
+    <section id="menu">
+        <div class="text-divider-wrapper">
+            <div class="text-divider">
+                <h1>Menu</h1>
+            </div>
+            <div class="menu-description">
+                <p>
+                    Indulge in the bold and vibrant flavors of Mexico 
+                    with our carefully crafted dishes. From sizzling 
+                    fajitas and zesty tacos to rich, slow-cooked moles 
+                    and fresh ceviche, every bite is a celebration of 
+                    tradition. Made with the finest ingredients and 
+                    authentic recipes, our menu brings you the true 
+                    essence of Mexican cuisine. Whether you're craving 
+                    something spicy, savory, or sweet, we have the perfect 
+                    dish to satisfy your taste buds. ¡Buen provecho! 
+                </p>
+            </div>
+        </div>
+        <div class="tabs">
+            <button class="tab active" onclick="changeTab('breakfast')">All</button>
+            <button class="tab" onclick="changeTab('lunch')">Lunch</button>
+            <button class="tab" onclick="changeTab('dinner')">Dinner</button>
+        </div>
+    
+        <div class="menu-wrapper">
+            <div class="food-item active" id="breakfast">
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                <div class="food-container animated fade-in">
+                    <div class="food-image">
+                        <img src="images/carne-asada-1-square-1-500x375.jpg" alt="">
+                    </div>
+                    <div class="food-info">
+                        <h3>Carne Asada</h3>
+                        <h4>$5</h4>
+                    </div>
+                    <div class="food-explained">
+                        <p>Classic taco that is loved throughout the world</p>
+                    </div>
+                    
+                    <div class="collapsible-wrapper">
+                        <!-- Collapsible Button -->
+                        <button class="collapsible">More Info</button>
+                        
+                        <!-- Collapsible Content -->
+                        <div class="collapsible-content">
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                            <span>Calories: 250 kcal</span>
+                            <p>Ingredients: Beef, onions, cilantro, lime, tortillas.</p>
+                            <p>Calories: 250 kcal</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fuga obcaecati expedita voluptates dignissimos voluptate dolores rem est pariatur vitae. Unde, possimus tempore illo reiciendis pariatur iure minima voluptatibus incidunt?</p>
+                            <span>Ingredients: Beef, onions, cilantro, lime, tortillas.</span>
+                        </div>
+                        </div>
+                </div>
+                
+            </div>
+    
+            <div class="food-item" id="lunch"></div>
+            <div class="food-item" id="dinner"></div>
+            
+        </div>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

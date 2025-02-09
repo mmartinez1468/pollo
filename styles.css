@@ -1,0 +1,732 @@
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }  
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  p, span, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    font-family: "Bricolage Grotesque", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    font-family: "Bricolage Grotesque", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+  h3 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  p {
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  span {
+    font-weight: 900;
+    letter-spacing: 3px;
+  }
+
+
+  /********************* ANIMATIONS *********************/
+  .animated {
+    opacity: 0;
+    transition: all 1s;
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn .5s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotation-right {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+  
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+    /*========== Responsive typography ==========*/
+  @media screen and (min-width: 1024px) {
+      :root {
+        --normal-font-size: 1rem;
+      }
+    }
+    
+    /*=============== BASE ===============*/
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    
+    body {
+      font-family: var(--body-font);
+      font-size: var(--normal-font-size);
+      background-color: var(--body-color);
+    }
+    
+    ul {
+      list-style: none;
+      /* Color highlighting when pressed on mobile devices */
+      /*-webkit-tap-highlight-color: transparent;*/
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    /*=============== REUSABLE CSS CLASSES ===============*/
+    .container {
+      max-width: 1120px;
+      margin-inline: 1.5rem;
+    }
+    
+    /*=============== HEADER ===============*/
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #126497;
+      box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+      z-index: var(--z-fixed);
+    }
+    
+    /*=============== NAV ===============*/
+    .nav {
+      height: var(--header-height);
+    }
+    
+    .nav__logo, 
+    .nav__burger, 
+    .nav__close {
+      color: var(--white-color);
+    }
+    
+    .nav__data {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      column-gap: .25rem;
+      font-weight: var(--font-semi-bold);
+      /* Color highlighting when pressed on mobile devices */
+      /*-webkit-tap-highlight-color: transparent;*/
+    }
+    
+    .nav__logo i {
+      font-weight: initial;
+      font-size: 1.25rem;
+    }
+    
+    .nav__toggle {
+      position: relative;
+      width: 32px;
+      height: 32px;
+    }
+    
+    .nav__burger, 
+    .nav__close {
+      position: absolute;
+      width: max-content;
+      height: max-content;
+      inset: 0;
+      margin: auto;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: opacity .1s, transform .4s;
+    }
+    
+    .nav__close {
+      opacity: 0;
+    }
+    
+    /* Navigation for mobile devices */
+    @media screen and (max-width: 1118px) {
+      .nav__menu {
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        height: calc(100vh - 3.5rem);
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top .4s, opacity .3s;
+      }
+      .nav__menu::-webkit-scrollbar {
+        width: 0;
+      }
+      .nav__list {
+        background-color: #126497;
+        padding-top: 1rem;
+      }
+    }
+    
+    .nav__link {
+      color: var(--white-color);
+      background-color: #126497;
+      font-weight: var(--font-semi-bold);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color .3s;
+    }
+    
+    .nav__link:hover {
+      background-color: var(--black-color-light);
+    }
+    
+    /* Show menu */
+    .show-menu {
+      opacity: 1;
+      top: 3.5rem;
+      pointer-events: initial;
+    }
+    
+    /* Show icon */
+    .show-icon .nav__burger {
+      opacity: 0;
+      transform: rotate(90deg);
+    }
+    .show-icon .nav__close {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+    
+    /*=============== DROPDOWN ===============*/
+    .dropdown__item {
+      cursor: pointer;
+    }
+    
+    .dropdown__arrow {
+      font-size: 1.25rem;
+      font-weight: initial;
+      transition: transform .4s;
+    }
+    
+    .dropdown__link, 
+    .dropdown__sublink {
+      padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+      color: var(--white-color);
+      background-color: #126497;
+      display: flex;
+      align-items: center;
+      column-gap: .5rem;
+      font-weight: var(--font-semi-bold);
+      transition: background-color .3s;
+    }
+    
+    .dropdown__link i, 
+    .dropdown__sublink i {
+      font-size: 1.25rem;
+      font-weight: initial;
+    }
+    
+    .dropdown__link:hover, 
+    .dropdown__sublink:hover {
+      background-color: var(--black-color);
+    }
+    
+    .dropdown__menu, 
+    .dropdown__submenu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease-out;
+    }
+    
+    /* Show dropdown menu & submenu */
+    .dropdown__item:hover .dropdown__menu, 
+    .dropdown__subitem:hover > .dropdown__submenu {
+      max-height: 1000px;
+      transition: max-height .4s ease-in;
+    }
+    
+    /* Rotate dropdown icon */
+    .dropdown__item:hover .dropdown__arrow {
+      transform: rotate(180deg);
+    }
+    
+    /*=============== DROPDOWN SUBMENU ===============*/
+    .dropdown__add {
+      margin-left: auto;
+    }
+    
+    .dropdown__sublink {
+      background-color: var(--black-color-lighten);
+    }
+    
+    /*=============== BREAKPOINTS ===============*/
+    /* For small devices */
+    @media screen and (max-width: 340px) {
+      .container {
+        margin-inline: 1rem;
+      }
+    
+      .nav__link {
+        padding-inline: 1rem;
+      }
+    }
+    
+    /* For large devices */
+    @media screen and (min-width: 1118px) {
+      .container {
+        margin-inline: auto;
+      }
+    
+      .nav {
+        height: calc(var(--header-height) + 2rem);
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav__toggle {
+        display: none;
+      }
+      .nav__list {
+        height: 100%;
+        display: flex;
+        column-gap: 3rem;
+      }
+      .nav__link {
+        height: 100%;
+        padding: 0;
+        justify-content: initial;
+        column-gap: .25rem;
+      }
+      .nav__link:hover {
+        background-color: transparent;
+      }
+    
+      .dropdown__item, 
+      .dropdown__subitem {
+        position: relative;
+      }
+    
+      .dropdown__menu, 
+      .dropdown__submenu {
+        max-height: initial;
+        overflow: initial;
+        position: absolute;
+        left: 0;
+        top: 6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s, top .3s;
+      }
+    
+      .dropdown__link, 
+      .dropdown__sublink {
+        padding-inline: 1rem 3.5rem;
+      }
+    
+      .dropdown__subitem .dropdown__link {
+        padding-inline: 1rem;
+      }
+    
+      .dropdown__submenu {
+        position: absolute;
+        left: 100%;
+        top: .5rem;
+      }
+    
+      /* Show dropdown menu */
+      .dropdown__item:hover .dropdown__menu {
+        opacity: 1;
+        top: 5.5rem;
+        pointer-events: initial;
+        transition: top .3s;
+      }
+    
+      /* Show dropdown submenu */
+      .dropdown__subitem:hover > .dropdown__submenu {
+        opacity: 1;
+        top: 0;
+        pointer-events: initial;
+        transition: top .3s;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    #landing {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        margin-top: 3.5rem;
+        padding: 3rem 0;
+        overflow: hidden;
+    }
+    .landing-intro {
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+    }
+    .landing-intro > button {
+      margin-top: 1rem;
+    }
+    .landing-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        animation: rotation-right 6s infinite linear;
+        overflow: hidden;
+        width: 70%;
+    }
+    .landing-image > img {
+        overflow: hidden;
+    }
+
+
+    #landing {
+        position: relative;
+        color: white;
+        z-index: 1;
+      }
+      #landing::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(images/mexican-food-many-dishes-mexican-cuisine-dark-background_1310182-2385.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust darkness */
+        background-blend-mode: multiply;
+    }
+      
+    @media screen and (min-width: 520px) {
+      .landing-image {
+        width: 60%;
+      }
+    }
+    @media screen and (min-width: 585px) {
+      .landing-image {
+        width: 50%;
+      }
+    }
+    @media screen and (min-width: 760px) {
+      #landing {
+        flex-direction: row;
+      }
+      .landing-image {
+        width: 40%;
+        margin: 0;
+      }
+      .landing-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+#menu {
+    background-color: rgb(224, 221, 221);
+    padding: 3rem 0;
+}
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #126497;
+    color: white;
+    font-weight: 900;
+    font-family: "Bricolage Grotesque", serif;
+}
+.tab.active {
+    background-color: #e5c42a;
+    color: white;
+}
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.food-item {
+    display: none; /* Hide all content by default */
+}
+.food-item.active {
+    display: block; /* Show only the active content */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+.food-container {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    border-radius: 10px;
+    margin-top: 3rem;
+    background-color: #126497;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.food-image > img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.food-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    border: none;
+    position: relative;
+    color: white;
+}
+.food-info::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;  /* Center the border */
+    transform: translateX(-50%); /* Ensures it's centered */
+    width: 90%;  /* Adjust this value to change the border length */
+    height: 2px;
+    background-color: #bf362a;
+}
+.food-info > h3 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+.food-info > h4 {
+    justify-content: end;
+    margin-left: auto;
+    color: #e5c42a;
+}
+.food-explained {
+    padding: 1rem;
+    color: white;
+}
+.collapsible-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.collapsible {
+    background-color: #bf362a;
+    color: white;
+    cursor: pointer;
+    padding: 20px;             /* Adjusted padding to make the button bigger */
+    width: 60px;              /* Set width to a fixed size */
+    height: 60px;             /* Set height to be equal to width for a circle */
+    border-radius: 50%;       /* Makes the button circular */
+    text-align: center;
+    font-size: 1rem;        /* Increases the font size for better visibility */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: flex;            /* Use flexbox for centering the text inside */
+    justify-content: center;  /* Centers the text horizontally */
+    align-items: center;      /* Centers the text vertically */
+    margin-bottom: -2rem;
+    z-index: 1;
+    border: none;
+    border: 3px solid #e5c42a;
+}
+
+.collapsible:hover {
+    background-color: #a12d23;
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #e5c42a;
+    padding: 0 1rem;
+    transition: max-height 0.3s ease-out;
+    color: black;
+    font-size: 0.9rem;
+    border-radius: 0 0 10px 10px;
+    color: white;
+}
+.collapsible-content > span {
+    color: #e5c42a;
+    font-size: .5rem;
+}
+
+
+
+.text-divider-wrapper {
+    width: 100%;
+}
+
+.text-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    width: 80%;
+  }
+  
+  .text-divider::before, .text-divider::after {
+    content: '';
+    height: 3px;
+    background-color: #000000;
+    flex-grow: 1;
+  }
+  .text-divider > h1 {
+    padding: 0 2rem 0 2rem;
+    color: #126497;
+  }
+  .menu-description {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+  }
+  .landing-button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    font-family: "Bricolage Grotesque", serif;
+    background-color: #1178de;
+    color: white;
+    font-weight: 900;
+   }
+   
+   .landing-button::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #0fb0d8 0%, #47d5f9 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .landing-button:hover::before {
+    width: 9em;
+   }
